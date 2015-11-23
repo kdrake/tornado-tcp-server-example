@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>CNord</title>
+        <style type="text/css">
+            #messages {
+                float: left;
+            }
+            #sources {
+                float: right;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="body">
+            <div id="inbox">
+                <div id="messages">
+                    <h4>Сообщения</h4>
+                    <ul id="message-list">
+                        {% for message in messages %}
+                          {% include "message.html" %}
+                        {% end %}
+                    </ul>
+                </div>
+
+                <div id="sources">
+                    <h4>Активные источники</h4>
+                    {% include "source-list.html" %}
+                </div>
+            </div>
+        </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+        <script src="{{ static_url("log.js") }}" type="text/javascript"></script>
+    </body>
+</html>
